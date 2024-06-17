@@ -34,11 +34,11 @@ def split_data(df):
     return X_train, X_test, y_train, y_test
 
 if __name__ == "__main__":
-    df = load_data('/mnt/data/training_set_features.csv', '/mnt/data/training_set_labels.csv')
+    df = load_data('training_set_features.csv', 'training_set_labels.csv')
     df = preprocess_data(df)
     X_train, X_test, y_train, y_test = split_data(df)
     # Save preprocessed data
-    pd.DataFrame(X_train).to_csv('/mnt/data/X_train.csv', index=False)
-    pd.DataFrame(X_test).to_csv('/mnt/data/X_test.csv', index=False)
-    y_train.to_csv('/mnt/data/y_train.csv', index=False)
-    y_test.to_csv('/mnt/data/y_test.csv', index=False)
+    pd.DataFrame(X_train).to_csv('X_train.csv', index=False)
+    pd.DataFrame(X_test).to_csv('X_test.csv', index=False)
+    y_train.to_csv('y_train.csv', index=False)
+    y_test.to_csv('y_test.csv', index=False)

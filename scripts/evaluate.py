@@ -11,4 +11,4 @@ def evaluate(true_labels_path, predictions_path):
     return roc_auc
 
 if __name__ == "__main__":
-    evaluate('/mnt/data/y_test.csv', '/mnt/data/submission.csv')
+    evaluate('/mnt/data/y_test.csv', 'submission.csv')

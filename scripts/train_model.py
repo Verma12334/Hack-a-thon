@@ -5,10 +5,10 @@ from sklearn.metrics import roc_auc_score
 import joblib
 
 def load_preprocessed_data():
-    X_train = pd.read_csv('/mnt/data/X_train.csv')
-    X_test = pd.read_csv('/mnt/data/X_test.csv')
-    y_train = pd.read_csv('/mnt/data/y_train.csv')
-    y_test = pd.read_csv('/mnt/data/y_test.csv')
+    X_train = pd.read_csv('X_train.csv')
+    X_test = pd.read_csv('X_test.csv')
+    y_train = pd.read_csv('y_train.csv')
+    y_test = pd.read_csv('y_test.csv')
     return X_train, X_test, y_train, y_test
 
 def train_model(X_train, y_train):
@@ -26,4 +26,4 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = load_preprocessed_data()
     model = train_model(X_train, y_train)
     roc_auc = evaluate_model(model, X_test, y_test)
-    joblib.dump(model, '/mnt/data/best_model.pkl')
+    joblib.dump(model, 'best_model.pkl')

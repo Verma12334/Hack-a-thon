@@ -4,7 +4,7 @@ import joblib
 from sklearn.preprocessing import StandardScaler
 
 def load_model():
-    return joblib.load('/mnt/data/best_model.pkl')
+    return joblib.load('best_model.pkl')
 
 def preprocess_new_data(df):
     # Preprocess new data similarly to training data
@@ -25,7 +25,7 @@ def make_predictions(model, df):
     return predictions
 
 if __name__ == "__main__":
-    df = pd.read_csv('/mnt/data/test_set_features.csv')
+    df = pd.read_csv('test_set_features.csv')
     model = load_model()
     predictions = make_predictions(model, df)
     output = pd.DataFrame({
@@ -33,4 +33,4 @@ if __name__ == "__main__":
         'xyz_vaccine': predictions[:, 0],
         'seasonal_vaccine': predictions[:, 1]
     })
-    output.to_csv('/mnt/data/submission.csv', index=False)
+    output.to_csv('submission.csv', index=False)
